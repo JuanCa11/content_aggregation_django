@@ -1,0 +1,18 @@
+{% extends 'website/links.html' %} {% load static %} {% block content %}
+<div class="container ">
+    {% if news_list %}
+    <div class="card-columns" style="padding: 10px; margin: 20px;">
+        {% for new in news_list %}
+        <div class="card" style="width: 18rem; border:5px black solid">
+            <div class="card-body">
+                <!--<img class="card-img-top" src="{% static 'techcrunch_logo.jpeg' %}" alt="Card image cap">-->
+                <h3 class="card-title">{{new.site.name | upper}}</h3>
+                <h5 class="card-title">{{new.title}}</h5>
+                <a href="{{new.link}}">For more info click here </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No news are available.</p>
+    {% endif %} {% endblock %}
