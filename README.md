@@ -1,2 +1,2 @@
-# content_aggregation_django
-Content Aggregation Website
+# Content Aggregation Website
+
