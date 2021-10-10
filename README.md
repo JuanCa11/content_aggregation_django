@@ -21,10 +21,24 @@ Then install the dependencies:
 ```sh
 (env)$ pip install -r requirements.txt
 ```
-Note the `(env)` in front of the prompt. This indicates that this terminal
-session operates in a virtual environment set up by `virtualenv2`.
 
-Once `pip` has finished downloading the dependencies:
+Make migrations and migrate models for website application:
+
+```sh
+(env)$ python manage.py makemigrations website
+(env)$ python manage.py migrate
+```
+
+Run scripts to create Sites and News rows:
+
+```sh
+(env)$ python manage.py create_sites
+(env)$ python manage.py fetch_news
+```
+
+Note that you will need to add `fetch_news` to contrab tab to run it periodically
+
+Now you can run server:
 ```sh
 (env)$ python manage.py runserver
 ```
